@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RMf-pY-ww7">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="p8e-Wj-hol">
+            <objects>
+                <navigationController id="RMf-pY-ww7" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UOX-Ue-AT6">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gXQ-ld-JyN" kind="relationship" relationship="rootViewController" id="hjc-vY-e3n"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="glj-hx-QBb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-577" y="80"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="VZr-mg-j9P">
+            <objects>
+                <viewController storyboardIdentifier="idMainViewController" id="gXQ-ld-JyN" customClass="MainViewController" customModule="Native" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rRn-3e-3rs"/>
+                        <viewControllerLayoutGuide type="bottom" id="2wT-Ig-P3b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Q4W-mm-plm">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jf5-yz-KSz">
+                                <rect key="frame" x="36" y="62" width="467" height="263"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jf5-yz-KSz" secondAttribute="height" multiplier="16:9" id="1ry-aI-lfq"/>
+                                </constraints>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="URc-4C-P2w">
+                                <rect key="frame" x="523" y="251" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="onSliderChange:" destination="gXQ-ld-JyN" eventType="valueChanged" id="f21-yO-z4h"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Statuses from unity scripts:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cr3-Hu-TZr">
+                                <rect key="frame" x="36" y="334" width="210" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEE-lX-apM">
+                                <rect key="frame" x="263" y="334" width="240" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cL-Mc-dwV">
+                                <rect key="frame" x="520" y="62" width="125" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Display Unity view"/>
+                                <connections>
+                                    <action selector="onButton:" destination="gXQ-ld-JyN" eventType="touchUpInside" id="nq0-R8-zeT"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="doC-xk-fTQ" customClass="Ball" customModule="Native" customModuleProvider="target">
+                                <rect key="frame" x="545" y="129" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.29411764709999999" green="0.31415171682098764" blue="0.65205439814814814" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="jf5-yz-KSz" secondAttribute="bottom" constant="50" id="5fv-g7-Ug8"/>
+                            <constraint firstItem="jf5-yz-KSz" firstAttribute="leading" secondItem="Q4W-mm-plm" secondAttribute="leading" constant="36" id="kC9-7a-z29"/>
+                            <constraint firstItem="jf5-yz-KSz" firstAttribute="top" secondItem="rRn-3e-3rs" secondAttribute="bottom" constant="30" id="mBq-Ou-3zs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="77A-0Y-QUt"/>
+                    <connections>
+                        <outlet property="ball" destination="doC-xk-fTQ" id="Hxz-cr-8uz"/>
+                        <outlet property="statusLabel" destination="kEE-lX-apM" id="BmO-la-4Wj"/>
+                        <outlet property="unityViewPlaceholder" destination="jf5-yz-KSz" id="IaV-bh-HJK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dWc-VG-3Xb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="424.13793103448279" y="79.200000000000003"/>
+        </scene>
+    </scenes>
+</document>
